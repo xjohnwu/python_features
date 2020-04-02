@@ -38,3 +38,18 @@ def test_multiple_values_for_keyword_argument_error():
         assert True
 
 
+def test_unpack_dictionary():
+    class TestClass:
+        def __init__(self, url, topics):
+            self.url = url
+            self.topics = topics
+
+        def print_fields(self):
+            print(self.url)
+            print(self.topics)
+
+    params = {'url': 'www.helloworld.com', 'topics': ['Abc', 'Def', "gHi"]}
+    c = TestClass(**params)
+    c.print_fields()
+    assert c.url == params['url']
+    assert c.topics == params['topics']
