@@ -14,3 +14,7 @@ def test_ceil_amount():
 def test_floor_amount():
     assert 0.002 == floor_amount(0.002813, 3)
     assert 0.0028 == floor_amount(0.002813, 4)
+
+
+def test_square():
+    assert 9 == pow(3, 2)
