@@ -1,5 +1,5 @@
 import time
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 
 def test_datetime():
@@ -13,3 +13,9 @@ def test_timespan():
     time.sleep(1)
     print(datetime.utcnow() - now)
     assert datetime.utcnow() - now >= timedelta(seconds=1)
+
+
+def test_date():
+    print("Today(datetime):", str(datetime.today()))
+    print("Today(date):", str(date.today()))
+    print("UTC today:", str(datetime.utcnow().date()))
