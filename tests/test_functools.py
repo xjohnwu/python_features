@@ -13,6 +13,9 @@ class CachedPropertyCls:
     def p(self):
         return self.get_data()
 
+    def clear_data(self):
+        del self.p
+
 
 def test_cached_p():
     c = CachedPropertyCls()
@@ -22,3 +25,5 @@ def test_cached_p():
     assert 'data2' == c.p
     del c.p
     assert 'data3' == c.p
+    c.clear_data()
+    assert 'data4' == c.p
