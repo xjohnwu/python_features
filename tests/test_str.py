@@ -8,3 +8,8 @@ def test_split_num():
     num = 31
     splits = [int(s) for s in str(num)]
     assert [3, 1] == splits
+
+
+def test_zfill():
+    num = 31
+    assert '000031' == str(num).zfill(6)

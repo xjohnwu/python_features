@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, date
 
 import dateparser
 import pandas as pd
@@ -17,7 +17,7 @@ def roll_fund(df):
 def process_dates(start_date, end_date):
     ed = end_date
     if end_date is None:
-        ed = dateparser.parse(str(datetime.date.today()))
+        ed = dateparser.parse(str(date.today()))
     elif type(end_date) is str:
         ed = dateparser.parse(end_date)
     sd = start_date

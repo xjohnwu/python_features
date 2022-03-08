@@ -1,6 +1,8 @@
-def test_dataframe_head_tail():
-    import pandas as pd
+import pandas as pd
+import pytest
 
+
+def test_dataframe_head_tail():
     # initialize a dataframe
     df = pd.DataFrame(
         [[21, 72, 67],
@@ -26,3 +28,9 @@ def test_dataframe_head_tail():
 
     for index, series in df.head(3).iterrows():
         print(series['a'])
+
+
+def test_dataframe_empty_df():
+    df = pd.DataFrame()
+    with pytest.raises(KeyError):
+        print(df['BTCUSDT'])
