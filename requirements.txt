@@ -1,4 +1,5 @@
 pandas
 pytest
+pytest-mock
 dateparser
 openpyxl
