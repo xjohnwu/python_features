@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+log_cli_format = "%(asctime)s.%(msecs)06d %(filename)s:%(funcName)s %(levelname)-7s %(message)s"
