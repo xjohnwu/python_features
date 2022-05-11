@@ -1,5 +1,5 @@
 import time
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 from dateutil.parser import isoparse
 from dateutil import tz
@@ -29,3 +29,8 @@ def test_isoparse():
     print(dt)
     assert dt == datetime(2020, 6, 13, 22, 54, 57, 404000, tzinfo=tz.UTC)
     assert dt.utcoffset() == timedelta(0)
+
+
+def test_strptime():
+    dt = datetime.strptime('2022-04-11 09:18:42', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
+    assert dt == datetime(2022, 4, 11, 9, 18, 42, tzinfo=timezone.utc)
