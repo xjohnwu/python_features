@@ -34,3 +34,7 @@ def test_isoparse():
 def test_strptime():
     dt = datetime.strptime('2022-04-11 09:18:42', '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
     assert dt == datetime(2022, 4, 11, 9, 18, 42, tzinfo=timezone.utc)
+
+
+def test_fromtimestamp():
+    print(datetime.fromtimestamp(1651221451934/1000))
